@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.doanltandroid.quizme">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".LichSuChoiActivity"></activity>
+        <activity android:name=".formAnhDaiDien" />
+        <activity android:name=".ThuThachActivity" />
+        <activity
+            android:name=".CreditActivity"
+            android:label="Credit"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".RankActivity"
+            android:label="Ranking"
+            android:parentActivityName=".MenuActivity" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="Profile"
+            android:parentActivityName=".MenuActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.doanltandroid.quizme.MenuActivity" />
+        </activity>
+        <activity
+            android:name=".DoiMatKhauActivity"
+            android:label="Đổi mật khẩu"
+            android:parentActivityName=".ProfileActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.doanltandroid.quizme.ProfileActivity" />
+        </activity>
+        <activity
+            android:name=".LayLaiMatKhauActivity"
+            android:label="Lấy lại mật khẩu"
+            android:parentActivityName=".DangNhap_Activity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.doanltandroid.quizme.DangNhap_Activity" />
+        </activity>
+        <activity
+            android:name=".DangKyActivity"
+            android:label="Đăng ký"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.doanltandroid.quizme.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DangNhap_Activity"
+            android:label="Đăng nhập"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.doanltandroid.quizme.MainActivity" />
+        </activity>
+        <activity
+            android:name=".LinhVucActivity"
+            android:label="Thử thách"
+            android:parentActivityName=".MenuActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.doanltandroid.quizme.MenuActivity" />
+        </activity>
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

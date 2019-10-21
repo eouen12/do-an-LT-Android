@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Constraint_dangky"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DangKyActivity">
+
+    <TextView
+        android:id="@+id/title_dangky_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Đăng ký"
+        android:textColor="#000000"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/tendangnhap_dangky_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Tên đăng nhập"
+        android:inputType="text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/hoten_dangky_edittext"
+        app:layout_constraintStart_toStartOf="@+id/hoten_dangky_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/title_dangky_textview" />
+
+    <EditText
+        android:id="@+id/email_dangky_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/tendangnhap_dangky_edittext"
+        app:layout_constraintStart_toStartOf="@+id/tendangnhap_dangky_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/tendangnhap_dangky_edittext" />
+
+    <EditText
+        android:id="@+id/matkhau_dangky_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/email_dangky_edittext"
+        app:layout_constraintStart_toStartOf="@+id/email_dangky_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/email_dangky_edittext" />
+
+    <EditText
+        android:id="@+id/rematkhau_dangky_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Nhập lại mật khẩu"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/matkhau_dangky_edittext"
+        app:layout_constraintStart_toStartOf="@+id/matkhau_dangky_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/matkhau_dangky_edittext" />
+
+    <EditText
+        android:id="@+id/hoten_dangky_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Họ và tên"
+        android:inputType="text"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/title_dangky_textview"
+        app:layout_constraintTop_toBottomOf="@+id/rematkhau_dangky_edittext" />
+
+    <Button
+        android:id="@+id/dangKy_dangky_button"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        android:background="@drawable/custom_button"
+        android:text="Đăng ký"
+        android:textColor="@color/color_Text_White"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hoten_dangky_edittext" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

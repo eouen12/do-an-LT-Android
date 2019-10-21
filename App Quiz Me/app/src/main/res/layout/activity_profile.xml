@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Constraint_profile"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <TextView
+        android:id="@+id/tentitleNguoiChoi_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/tennguoichoi_proffle"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/anhdaidien_profile_imageview"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/socredit_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="500"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/tentitleNguoiChoi_profile_textview"
+        app:layout_constraintTop_toBottomOf="@+id/tentitleNguoiChoi_profile_textview" />
+
+    <ImageView
+        android:id="@+id/iconCredit"
+        android:layout_width="28dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/socredit_profile_textview"
+        app:layout_constraintTop_toBottomOf="@+id/tentitleNguoiChoi_profile_textview"
+        app:srcCompat="@drawable/icon_credit" />
+
+    <TextView
+        android:id="@+id/hoten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="Họ tên:"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/anhdaidien_profile_imageview"
+        app:layout_constraintTop_toBottomOf="@+id/anhdaidien_profile_imageview" />
+
+    <TextView
+        android:id="@+id/ngaysinh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Ngày sinh:"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/gioitinh"
+        app:layout_constraintTop_toBottomOf="@+id/gioitinh" />
+
+    <TextView
+        android:id="@+id/gioitinh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Giới tính:"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/matkhau"
+        app:layout_constraintTop_toBottomOf="@+id/matkhau" />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Email:"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/hoten"
+        app:layout_constraintTop_toBottomOf="@+id/hoten" />
+
+    <TextView
+        android:id="@+id/matkhau"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Mật khẩu:"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/email"
+        app:layout_constraintTop_toBottomOf="@+id/email" />
+
+    <EditText
+        android:id="@+id/tennguoichoi_profile_edittext"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:enabled="false"
+        android:inputType="textPersonName"
+        android:text="@string/tennguoichoi_proffle"
+        android:textSize="15sp"
+        app:layout_constraintStart_toEndOf="@+id/hoten"
+        app:layout_constraintTop_toBottomOf="@+id/anhdaidien_profile_imageview" />
+
+    <ImageButton
+        android:id="@+id/suatennguoichoi_profile_imagebutton"
+        android:layout_width="50dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@null"
+        android:onClick="suaTenNguoiChoi"
+        android:src="@drawable/pen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.03"
+        app:layout_constraintStart_toEndOf="@+id/tennguoichoi_profile_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/anhdaidien_profile_imageview" />
+
+    <TextView
+        android:id="@+id/ngaysinh_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:text="20/10/1999"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/gioitinh_profile_textview"
+        app:layout_constraintTop_toBottomOf="@+id/hoten" />
+
+    <TextView
+        android:id="@+id/gioitinh_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Nữ"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/matkhau_profile_textview"
+        app:layout_constraintTop_toBottomOf="@+id/hoten" />
+
+    <TextView
+        android:id="@+id/email_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="nhathuy@nhgau"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/tennguoichoi_profile_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/hoten" />
+
+    <TextView
+        android:id="@+id/matkhau_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="*****************"
+        android:textColor="#000000"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="@+id/email_profile_textview"
+        app:layout_constraintTop_toBottomOf="@+id/hoten" />
+
+    <TextView
+        android:id="@+id/doimatkhau_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="30dp"
+        android:text="Đổi mật khẩu"
+        android:textColor="#3F51B5"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suatennguoichoi_profile_imagebutton" />
+
+    <ImageView
+        android:id="@+id/anhdaidien_profile_imageview"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/jacklaing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

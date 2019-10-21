@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Constraint_doimatkhau"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DoiMatKhauActivity">
+
+
+    <ImageView
+        android:id="@+id/anhdaidien_doimatkhau_imageView"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/jacklaing"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tennguoichoi_doimatkhau_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/tennguoichoi_proffle"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/anhdaidien_doimatkhau_imageView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/socredit_profile_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:text="500"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="@+id/tennguoichoi_doimatkhau_textview"
+        app:layout_constraintTop_toBottomOf="@+id/tennguoichoi_doimatkhau_textview" />
+
+    <EditText
+        android:id="@+id/matkhaucu_doimatkhau_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Mật khẩu cũ"
+        android:inputType="textPassword"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/anhdaidien_doimatkhau_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/anhdaidien_doimatkhau_imageView" />
+
+    <EditText
+        android:id="@+id/matkhaumoi_doimatkhau_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Mật khẩu mới"
+        android:inputType="textPassword"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/matkhaucu_doimatkhau_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/matkhaucu_doimatkhau_edittext" />
+
+    <EditText
+        android:id="@+id/rematkhaumoi_doimatkhau_edittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Nhập lại mật khẩu mới"
+        android:inputType="textPassword"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/matkhaumoi_doimatkhau_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/matkhaumoi_doimatkhau_edittext" />
+
+    <Button
+        android:id="@+id/doimatkhau_button"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/custom_button"
+        android:text="Xác nhận"
+        android:textColor="@color/color_Text_White"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rematkhaumoi_doimatkhau_edittext" />
+
+    <ImageView
+        android:id="@+id/iconCredit"
+        android:layout_width="28dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/socredit_profile_textview"
+        app:layout_constraintTop_toBottomOf="@+id/tennguoichoi_doimatkhau_textview"
+        app:srcCompat="@drawable/icon_credit" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Quiz Me</string>
+    <string name="tennguoichoi_proffle">Nguyễn Thái Nhật Huy</string>
+    <string name="title_activity_test">TestActivity</string>
+</resources>

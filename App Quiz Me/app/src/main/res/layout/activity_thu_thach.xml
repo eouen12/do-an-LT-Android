@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Constraint_thuthach"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ThuThachActivity">
+
+
+    <TextView
+        android:id="@+id/title_thuthach_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Thử thách "
+        android:textColor="#f0000000"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/include3"
+        layout="@layout/activity_form_anh_dai_dien" />
+
+    <ImageView
+        android:id="@+id/sinhmang_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/icon_heart_on"
+        app:layout_constraintStart_toStartOf="@+id/title_thuthach_textview"
+        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
+
+    <ImageView
+        android:id="@+id/sinhmang_2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_heart_on"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/sinhmang_1"
+        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
+
+    <ImageView
+        android:id="@+id/sinhmang_3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_heart_on"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/sinhmang_2"
+        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
+
+    <ImageView
+        android:id="@+id/sinhmang_4"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_heart_on"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/sinhmang_3"
+        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
+
+    <ImageView
+        android:id="@+id/sinhmang_5"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/icon_heart_on"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/sinhmang_4"
+        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
+
+    <ImageView
+        android:id="@+id/credit_imageview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/credit_thuthach_textview"
+        app:layout_constraintTop_toBottomOf="@+id/include3" />
+
+    <TextView
+        android:id="@+id/credit_thuthach_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="60dp"
+        android:text="500"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include3" />
+
+    <ImageView
+        android:id="@+id/iconCredit"
+        android:layout_width="28dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="0dp"
+        app:layout_constraintStart_toEndOf="@+id/credit_thuthach_textview"
+        app:layout_constraintTop_toTopOf="@+id/credit_imageview"
+        app:srcCompat="@drawable/icon_credit" />
+
+    <TextView
+        android:id="@+id/stt_cauhoi_thuthach_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Câu hỏi số 1:"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@+id/sinhmang_1"
+        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
+
+    <TextView
+        android:id="@+id/quiz_thuthach_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:text="Lorem ipsum dolor sit amet  dsfjkhsiuwer dsfsd"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/stt_cauhoi_thuthach_textview"
+        app:layout_constraintTop_toBottomOf="@+id/stt_cauhoi_thuthach_textview" />
+
+    <Button
+        android:id="@+id/ButtonA"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="ChonA"
+        android:text="A. abc"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_thuthach_textview" />
+
+    <Button
+        android:id="@+id/ButtonB"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:text="B. abc"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonA"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="@+id/ButtonA"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonA" />
+
+    <Button
+        android:id="@+id/ButtonC"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:text="C. abc"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonB"
+        app:layout_constraintStart_toStartOf="@+id/ButtonB"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonB" />
+
+    <Button
+        android:id="@+id/ButtonD"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
+        android:text="D. abc"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonC"
+        app:layout_constraintStart_toStartOf="@+id/ButtonC"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonC" />
+
+    <ImageView
+        android:id="@+id/khangia_trogiup_thuthach"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="50dp"
+        android:background="@null"
+        android:src="@drawable/icon_help_50_50"
+        app:layout_constraintStart_toStartOf="@+id/ButtonD"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonD"
+         />
+
+    <ImageView
+        android:id="@+id/goidiennguoithan_thuthach"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:background="@null"
+        android:src="@drawable/icon_help_phone"
+        app:layout_constraintStart_toEndOf="@+id/khangia_trogiup_thuthach"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonD" />
+
+    <ImageView
+        android:id="@+id/muacredit_thuthach"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/icon_credit"
+        app:layout_constraintStart_toEndOf="@+id/button_50_50_thuthach"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonD" />
+
+    <ImageView
+        android:id="@+id/button_50_50_thuthach"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/icon_help_50_50"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/goidiennguoithan_thuthach"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonD" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Constraint_menu"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity">
+
+    <TextView
+        android:id="@+id/title_menu_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Menu"
+        android:textColor="#f0000000"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include layout="@layout/activity_form_anh_dai_dien" />
+
+    <ImageView
+        android:id="@+id/thuthach_menu_image"
+        android:layout_width="180dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:background="#68F0E7E7"
+        android:src="@drawable/icon_thu_thach"
+        android:onClick="launchActivityThuThach"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_menu_textview" />
+
+    <ImageView
+        android:id="@+id/muacredit_menu_image"
+        android:layout_width="180dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="20dp"
+        android:background="#68F0E7E7"
+        android:src="@drawable/icon_credit"
+        android:onClick="launchActivityCredit"
+        app:layout_constraintStart_toStartOf="@+id/thuthach_menu_image"
+        app:layout_constraintTop_toBottomOf="@+id/thuthach_menu_image" />
+
+    <ImageView
+        android:id="@+id/xephang_menu_image"
+        android:layout_width="180dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/icon_rank"
+        android:background="#68F0E7E7"
+        android:onClick="launchActivityRank"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_menu_textview" />
+
+    <ImageView
+        android:id="@+id/dangxuat_menu_image"
+        android:layout_width="180dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="20dp"
+        android:background="#68F0E7E7"
+        android:src="@drawable/icon_logout"
+        android:onClick="launchActivityMain"
+        app:layout_constraintStart_toStartOf="@+id/xephang_menu_image"
+        app:layout_constraintTop_toBottomOf="@+id/xephang_menu_image" />
+
+    <TextView
+        android:id="@+id/thuthach_menu_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Thử thách"
+        android:textColor="#ff00"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/thuthach_menu_image"
+        app:layout_constraintEnd_toEndOf="@+id/thuthach_menu_image"
+        app:layout_constraintStart_toStartOf="@+id/thuthach_menu_image" />
+
+    <TextView
+        android:id="@+id/ranking_menu_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Rank"
+        android:textColor="#ff00"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/xephang_menu_image"
+        app:layout_constraintEnd_toEndOf="@+id/xephang_menu_image"
+        app:layout_constraintStart_toStartOf="@+id/xephang_menu_image" />
+
+    <TextView
+        android:id="@+id/muaCredit_menu_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Mua Credit"
+        android:textColor="#ff00"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/muacredit_menu_image"
+        app:layout_constraintEnd_toEndOf="@+id/muacredit_menu_image"
+        app:layout_constraintStart_toStartOf="@+id/muacredit_menu_image" />
+
+    <TextView
+        android:id="@+id/dangxuat_menu_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Đăng xuất"
+        android:textColor="#ff00"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/dangxuat_menu_image"
+        app:layout_constraintEnd_toEndOf="@+id/dangxuat_menu_image"
+        app:layout_constraintStart_toStartOf="@+id/dangxuat_menu_image" />
+</androidx.constraintlayout.widget.ConstraintLayout>
