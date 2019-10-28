@@ -61,7 +61,7 @@
         android:onClick="launchActivityMenu"
         android:text="Đăng nhập"
         android:textColor="@color/color_Text_White"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/matkhau_dangnhap_edittext" />
@@ -79,7 +79,7 @@
         android:onClick="launchActivityQuenMatKhau"
         android:text="Quên mật khẩu"
         android:textColor="@color/color_Text_White"
-        android:textSize="20sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/laylaimatkhau_button" />

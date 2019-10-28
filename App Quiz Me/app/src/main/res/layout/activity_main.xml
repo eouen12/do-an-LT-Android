@@ -48,7 +48,7 @@
     <Button
         android:id="@+id/dangnhap_main_button"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="25dp"
@@ -58,7 +58,7 @@
         android:onClick="launchActivityDangNhap"
         android:text="Đăng nhập"
         android:textColor="@color/color_Text_White"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
     <Button
         android:id="@+id/dangky_main_button"
         android:layout_width="300dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginTop="30dp"
@@ -75,7 +75,7 @@
         android:onClick="launchActivityDangKy"
         android:text="Đăng ký"
         android:textColor="@color/color_Text_White"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dangnhap_main_button" />

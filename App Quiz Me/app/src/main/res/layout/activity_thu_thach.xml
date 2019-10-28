@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Constraint_thuthach"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent"
     tools:context=".ThuThachActivity">
 
@@ -13,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Thử thách "
         android:textColor="#f0000000"
         android:textSize="40dp"
@@ -132,6 +133,7 @@
         android:onClick="ChonA"
         android:text="A. abc"
         android:textSize="20sp"
+        android:background="@drawable/custom_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quiz_thuthach_textview" />
@@ -141,6 +143,8 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:text="B. abc"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custom_button"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/ButtonA"
         app:layout_constraintHorizontal_bias="0.508"
@@ -152,6 +156,8 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:text="C. abc"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custom_button"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/ButtonB"
         app:layout_constraintStart_toStartOf="@+id/ButtonB"
@@ -162,6 +168,8 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:text="D. abc"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/custom_button"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/ButtonC"
         app:layout_constraintStart_toStartOf="@+id/ButtonC"
@@ -174,6 +182,7 @@
         android:layout_marginTop="50dp"
         android:background="@null"
         android:src="@drawable/icon_help_50_50"
+        android:visibility="invisible"
         app:layout_constraintStart_toStartOf="@+id/ButtonD"
         app:layout_constraintTop_toBottomOf="@+id/ButtonD"
          />
@@ -185,6 +194,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="50dp"
         android:background="@null"
+        android:visibility="invisible"
         android:src="@drawable/icon_help_phone"
         app:layout_constraintStart_toEndOf="@+id/khangia_trogiup_thuthach"
         app:layout_constraintTop_toBottomOf="@+id/ButtonD" />
@@ -194,6 +204,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
+        android:visibility="invisible"
         android:layout_marginTop="50dp"
         android:src="@drawable/icon_credit"
         app:layout_constraintStart_toEndOf="@+id/button_50_50_thuthach"
@@ -207,6 +218,7 @@
         android:layout_marginTop="50dp"
         android:src="@drawable/icon_help_50_50"
         android:textStyle="bold"
+        android:visibility="invisible"
         app:layout_constraintStart_toEndOf="@+id/goidiennguoithan_thuthach"
         app:layout_constraintTop_toBottomOf="@+id/ButtonD" />
 

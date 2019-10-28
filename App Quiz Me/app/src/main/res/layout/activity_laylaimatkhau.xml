@@ -48,6 +48,34 @@
         app:layout_constraintStart_toStartOf="@+id/tendangnhap_laylaimatkhau_edittext"
         app:layout_constraintTop_toBottomOf="@+id/tendangnhap_laylaimatkhau_edittext" />
 
+    <EditText
+        android:id="@+id/matkhau_laylaimatkhau_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Mật khẩu"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/email_laylaimatkhau_edittext"
+        app:layout_constraintStart_toStartOf="@+id/email_laylaimatkhau_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/email_laylaimatkhau_edittext" />
+
+    <EditText
+        android:id="@+id/rematkhau_laylaimatkhau_edittext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:hint="Nhập lại mật khẩu"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/matkhau_laylaimatkhau_edittext"
+        app:layout_constraintStart_toStartOf="@+id/matkhau_laylaimatkhau_edittext"
+        app:layout_constraintTop_toBottomOf="@+id/matkhau_laylaimatkhau_edittext" />
+
     <Button
         android:id="@+id/laylaimatkhau_button"
         android:layout_width="300dp"
@@ -55,14 +83,15 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="50dp"
         android:background="@drawable/custom_button"
         android:text="Lấy lại mật khẩu"
         android:textColor="@color/color_Text_White"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_laylaimatkhau_edittext" />
+        app:layout_constraintTop_toBottomOf="@+id/rematkhau_laylaimatkhau_edittext" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,14 +5,19 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class ProfileActivity extends AppCompatActivity {
-    TextView txtTenNguoiChoi, txtDoiMatKhau;
-    EditText txtSuaTenNguoiChoi;
+    TextView txtTenNguoiChoi;
+    EditText txtSuaTenNguoiChoi, txtMatKhauMoi, txtReMatKhau;
     ImageButton ibtnSuaTenNguoiChoi;
+    CheckBox chkDoiMatKhau;
+    Button btnDoiMatKhau;
 
     int dem=0;
 
@@ -23,14 +28,39 @@ public class ProfileActivity extends AppCompatActivity {
 
         txtTenNguoiChoi = findViewById(R.id.tentitleNguoiChoi_profile_textview);
         txtSuaTenNguoiChoi = findViewById(R.id.tennguoichoi_profile_edittext);
-        txtDoiMatKhau = findViewById(R.id.doimatkhau_profile_textview);
         ibtnSuaTenNguoiChoi = findViewById(R.id.suatennguoichoi_profile_imagebutton);
+        chkDoiMatKhau = findViewById(R.id.doimatkhau_profile_checkBox);
+        txtMatKhauMoi = findViewById(R.id.matkhaumoi_profile_edittext);
+        txtReMatKhau = findViewById(R.id.rematkhaumoi_profile_edittext);
+        btnDoiMatKhau = findViewById(R.id.doimatkhau_profile_button);
 
-        txtDoiMatKhau.setOnClickListener(new View.OnClickListener() {
+
+        chkDoiMatKhau.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b)
+                {
+                    txtMatKhauMoi.setVisibility(View.VISIBLE);
+                    txtReMatKhau.setVisibility(View.VISIBLE);
+                    btnDoiMatKhau.setVisibility(View.VISIBLE);
+                }
+                else
+                {
+                    txtMatKhauMoi.setVisibility(View.INVISIBLE);
+                    txtReMatKhau.setVisibility(View.INVISIBLE);
+                    btnDoiMatKhau.setVisibility(View.INVISIBLE);
+                    chkDoiMatKhau.setChecked(false);
+                }
+            }
+        });
+
+        btnDoiMatKhau.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), DoiMatKhauActivity.class);
-                startActivity(intent);
+                txtMatKhauMoi.setVisibility(View.INVISIBLE);
+                txtReMatKhau.setVisibility(View.INVISIBLE);
+                btnDoiMatKhau.setVisibility(View.INVISIBLE);
+                chkDoiMatKhau.setChecked(false);
             }
         });
     }

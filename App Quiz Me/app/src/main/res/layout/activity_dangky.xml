@@ -94,7 +94,7 @@
     <Button
         android:id="@+id/dangKy_dangky_button"
         android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="80dp"
@@ -103,7 +103,7 @@
         android:background="@drawable/custom_button"
         android:text="Đăng ký"
         android:textColor="@color/color_Text_White"
-        android:textSize="30sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
