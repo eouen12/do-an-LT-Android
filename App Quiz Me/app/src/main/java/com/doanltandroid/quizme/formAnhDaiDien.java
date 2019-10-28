@@ -16,6 +16,13 @@ public class formAnhDaiDien extends AppCompatActivity {
         setContentView(R.layout.activity_form_anh_dai_dien);
 
         imgAnhDaiDien = findViewById(R.id.anhdaidien_imageview);
+        imgAnhDaiDien.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(formAnhDaiDien.this,ProfileActivity.class));
+                //overridePendingTransition(R.anim.intent_enter,R.anim.intent_exit);
+            }
+        });
     }
 
 }

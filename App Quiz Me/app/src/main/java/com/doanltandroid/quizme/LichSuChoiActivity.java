@@ -21,5 +21,6 @@ public class LichSuChoiActivity extends AppCompatActivity {
     public void launchActivityRanking(View view) {
         Intent intent = new Intent(getApplicationContext(),RankActivity.class);
         startActivity(intent);
+       // overridePendingTransition(R.anim.intent_enter,R.anim.intent_exit);
     }
 }

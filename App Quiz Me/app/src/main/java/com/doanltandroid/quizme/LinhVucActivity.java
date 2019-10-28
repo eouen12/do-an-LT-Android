@@ -24,5 +24,6 @@ public class LinhVucActivity extends AppCompatActivity {
     public void setIntent(Class lop) {
         Intent intent = new Intent(getApplicationContext(),lop);
         startActivity(intent);
+        //overridePendingTransition(R.anim.intent_enter,R.anim.intent_exit);
     }
 }
