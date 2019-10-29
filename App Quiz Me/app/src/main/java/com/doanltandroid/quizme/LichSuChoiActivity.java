@@ -23,4 +23,9 @@ public class LichSuChoiActivity extends AppCompatActivity {
         startActivity(intent);
        // overridePendingTransition(R.anim.intent_enter,R.anim.intent_exit);
     }
+
+    public void launchActivityProfile(View view) {
+        startActivity(new Intent(LichSuChoiActivity.this,ProfileActivity.class));
+    }
+
 }

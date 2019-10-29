@@ -22,9 +22,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <include
-        android:id="@+id/include3"
-        layout="@layout/activity_form_anh_dai_dien" />
+    <ImageView
+        android:id="@+id/anhdaidien_thuthach_imageview"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="launchActivityProfile"
+        android:src="@drawable/jacklaing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/sinhmang_1"
@@ -78,7 +85,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@+id/credit_thuthach_textview"
-        app:layout_constraintTop_toBottomOf="@+id/include3" />
+        app:layout_constraintTop_toBottomOf="@+id/anhdaidien_thuthach_imageview" />
 
     <TextView
         android:id="@+id/credit_thuthach_textview"
@@ -89,7 +96,7 @@
         android:text="500"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include3" />
+        app:layout_constraintTop_toBottomOf="@+id/anhdaidien_thuthach_imageview" />
 
     <ImageView
         android:id="@+id/iconCredit"
@@ -133,7 +140,7 @@
         android:onClick="ChonA"
         android:text="A. abc"
         android:textSize="20sp"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/custom_btn_thu_thach"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/quiz_thuthach_textview" />
@@ -144,7 +151,7 @@
         android:layout_height="60dp"
         android:text="B. abc"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/custom_btn_thu_thach"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/ButtonA"
         app:layout_constraintHorizontal_bias="0.508"
@@ -157,7 +164,7 @@
         android:layout_height="60dp"
         android:text="C. abc"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/custom_btn_thu_thach"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/ButtonB"
         app:layout_constraintStart_toStartOf="@+id/ButtonB"
@@ -169,7 +176,7 @@
         android:layout_height="60dp"
         android:text="D. abc"
         android:layout_marginTop="8dp"
-        android:background="@drawable/custom_button"
+        android:background="@drawable/custom_btn_thu_thach"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/ButtonC"
         app:layout_constraintStart_toStartOf="@+id/ButtonC"

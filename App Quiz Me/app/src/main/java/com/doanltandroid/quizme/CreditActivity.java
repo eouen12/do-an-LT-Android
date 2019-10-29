@@ -14,4 +14,7 @@ public class CreditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_credit);
     }
 
+    public void launchActivityProfile(View view) {
+        startActivity(new Intent(CreditActivity.this,ProfileActivity.class));
+    }
 }

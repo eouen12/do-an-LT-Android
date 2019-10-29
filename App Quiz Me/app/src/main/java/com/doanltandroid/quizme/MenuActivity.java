@@ -44,4 +44,8 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(intent);
         //overridePendingTransition(R.anim.intent_enter,R.anim.intent_exit);
     }
+
+    public void launchActivityProfile(View view) {
+        setIntent(ProfileActivity.class);
+    }
 }

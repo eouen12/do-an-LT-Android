@@ -19,9 +19,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <include
-        android:id="@+id/include2"
-        layout="@layout/activity_form_anh_dai_dien" />
+    <ImageView
+        android:id="@+id/anhdaidien_lichsuchoi_imageview"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="launchActivityProfile"
+        android:src="@drawable/jacklaing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/ranking_lichsuchoi_button"
@@ -33,7 +40,7 @@
         android:enabled="true"
         android:onClick="launchActivityRanking"
         android:text="Ranking"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         android:textSize="18sp"
         android:textStyle="bold"
         android:background="@drawable/custom_button"
@@ -50,7 +57,7 @@
         android:background="@drawable/custom_button"
         android:enabled="false"
         android:text="Lịch sử chơi"
-        android:textColor="#FFFFFF"
+        android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/ranking_lichsuchoi_button"
@@ -69,7 +76,7 @@
         app:layout_constraintBottom_toTopOf="@+id/rcv_lichsuchoi"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_rank_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/title_lichsuchoi_textview" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_lichsuchoi"
@@ -80,6 +87,6 @@
         android:layout_marginEnd="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_rank_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/title_lichsuchoi_textview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
