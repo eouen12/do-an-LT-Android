@@ -13,7 +13,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="Lịch sử chơi"
-        android:textColor="#f0000000"
+        android:textColor="#03a9f4"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:enabled="true"
         android:onClick="launchActivityRanking"
         android:text="Ranking"
         android:textColor="#000"
@@ -60,6 +59,7 @@
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
+
         app:layout_constraintStart_toEndOf="@+id/ranking_lichsuchoi_button"
         app:layout_constraintTop_toBottomOf="@+id/title_lichsuchoi_textview" />
 
@@ -70,7 +70,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="46dp"
         android:text="Lịch sử chơi"
-        android:textColor="#03A9F4"
+        android:textColor="#9903A9F4"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/rcv_lichsuchoi"

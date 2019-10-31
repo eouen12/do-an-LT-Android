@@ -14,7 +14,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="Ranking"
-        android:textColor="#f0000000"
+        android:textColor="#03a9f4"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/ranking_lichsuchoi_button"
+        android:id="@+id/ranking_rank_button"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -47,7 +47,7 @@
         app:layout_constraintTop_toBottomOf="@+id/title_rank_textview" />
 
     <Button
-        android:id="@+id/lichsu_lichsuchoi_button"
+        android:id="@+id/lichsu_rank_button"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,7 +59,7 @@
         android:textColor="#000000"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ranking_lichsuchoi_button"
+        app:layout_constraintStart_toEndOf="@+id/ranking_rank_button"
         app:layout_constraintTop_toBottomOf="@+id/title_rank_textview" />
 
     <TextView
@@ -69,7 +69,7 @@
         android:layout_marginTop="80dp"
         android:layout_marginEnd="46dp"
         android:text="Bảng xếp hạng"
-        android:textColor="#03A9F4"
+        android:textColor="#9903A9F4"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/rcv_ranking"

@@ -16,7 +16,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:text="Thử thách "
-        android:textColor="#f0000000"
+        android:textColor="#03a9f4"
         android:textSize="40dp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
