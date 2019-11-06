@@ -5,80 +5,70 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import com.doanltandroid.quizme.Adapter.LinhVucAdapter;
+import com.doanltandroid.quizme.Class.LinhVuc;
+import com.doanltandroid.quizme.Loader.LinhVucLoader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 
-public class LinhVucActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String>  {
-    private Button btnLinhVuc1;
-    private Button btnLinhVuc2;
-    private Button btnLinhVuc3;
-    private Button btnLinhVuc4;
 
-    public void AnhXa()
-    {
-        btnLinhVuc1 = findViewById(R.id.linhvuc_1_button);
-        btnLinhVuc2 = findViewById(R.id.linhvuc_2_button);
-        btnLinhVuc3 = findViewById(R.id.linhvuc_3_button);
-        btnLinhVuc4 = findViewById(R.id.linhvuc_4_button);
-    }
+public class LinhVucActivity extends AppCompatActivity
+                                implements LoaderManager.LoaderCallbacks<String> {
+
+    private ArrayList<LinhVuc> mListLinhVuc;
+    private LinhVucAdapter adapter;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_linhvuc);
+        this.mListLinhVuc = new ArrayList<>();
+        this.recyclerView = this.findViewById(R.id.rcv_linh_vuc);
+        this.adapter = new LinhVucAdapter(this, this.mListLinhVuc);
+        this.recyclerView.setAdapter(this.adapter);
+        this.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+        this.recyclerView.addItemDecoration(new LinhVucGridDirection(2, 58, true));
 
-        AnhXa();
-
-        //Kiểm tra nếu Loader tồn tại thì khởi tạo lại
-        if(getSupportLoaderManager().getLoader(0)!=null)
-        {
-            getSupportLoaderManager().initLoader(0,null,this);
+        if (getSupportLoaderManager().getLoader(0) != null) {
+            getSupportLoaderManager().initLoader(0, null, this);
         }
-
-        getSupportLoaderManager().restartLoader(0,null,this);
-
+        getSupportLoaderManager().restartLoader(0, null, this);
     }
-
-
-
-    public void launchActivityThuThach(View view){
-        startActivity(new Intent(LinhVucActivity.this,ThuThachActivity.class));
-    }
-
-    public void launchActivityProfile(View view) {
-        startActivity(new Intent(LinhVucActivity.this,ProfileActivity.class));
-    }
-
 
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        //Tạo mới đối tượng LinhVucLoader
         return new LinhVucLoader(this);
     }
 
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
-        //Nhận chuỗi JSON gán cho các button
         try {
-            JSONObject jsonObject = new JSONObject(data); //Nhận chuỗi JSON
-            JSONArray itemArray = jsonObject.getJSONArray("dsLinhVuc"); //Lấy dsLinhVuc
-
-            //Gán cho button
-            //Ở đây do chuỗi JSON chỉ có 4 lĩnh vực nên vị trị của chuỗi từ 0->3
-            btnLinhVuc1.setText(itemArray.getJSONObject(0).getString("ten_linh_vuc"));
-            btnLinhVuc2.setText(itemArray.getJSONObject(1).getString("ten_linh_vuc"));
-            btnLinhVuc3.setText(itemArray.getJSONObject(2).getString("ten_linh_vuc"));
-            btnLinhVuc4.setText(itemArray.getJSONObject(3).getString("ten_linh_vuc"));
-
+            JSONObject obj = new JSONObject(data);
+            JSONArray items = obj.getJSONArray("data");
+            for (int i=0; i<items.length(); i++) {
+                JSONObject item = items.getJSONObject(i);
+                int id = item.getInt("id");
+                String tenLinhVuc = item.getString("ten_linh_vuc");
+                String hinhAnh = item.getString("hinh_anh");
+                Log.d("HINHANH", hinhAnh);
+                this.mListLinhVuc.add(new LinhVuc(id, tenLinhVuc, hinhAnh));
+            }
+            this.adapter.notifyDataSetChanged();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -88,4 +78,15 @@ public class LinhVucActivity extends AppCompatActivity implements LoaderManager.
     public void onLoaderReset(@NonNull Loader<String> loader) {
 
     }
+
+
+//    public void launchActivityThuThach(View view){
+//        startActivity(new Intent(LinhVucActivity.this,ThuThachActivity.class));
+//    }
+//
+//    public void launchActivityProfile(View view) {
+//        startActivity(new Intent(LinhVucActivity.this,ProfileActivity.class));
+//    }
+
+
 }

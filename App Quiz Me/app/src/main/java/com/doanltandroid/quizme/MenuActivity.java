@@ -23,9 +23,9 @@ public class MenuActivity extends AppCompatActivity {
 
     }
 
-//    public void launchActivityThuThach(View view) {
-//        setIntent(LinhVucActivity.class);
-//    }
+    public void launchActivityThuThach(View view) {
+        setIntent(LinhVucActivity.class);
+    }
 //
 //    public void launchActivityRank(View view) {
 //        setIntent(RankActivity.class);
@@ -39,11 +39,11 @@ public class MenuActivity extends AppCompatActivity {
 //        setIntent(MainActivity.class);
 //    }
 //
-//    public void setIntent (Class lop){
-//        Intent intent = new Intent(getApplicationContext(), lop);
-//        startActivity(intent);
-//        //overridePendingTransition(R.anim.intent_enter,R.anim.intent_exit);
-//    }
+    public void setIntent (Class lop){
+        Intent intent = new Intent(getApplicationContext(), lop);
+        startActivity(intent);
+        //overridePendingTransition(R.anim.intent_enter,R.anim.intent_exit);
+    }
 //
 //    public void launchActivityProfile(View view) {
 //        setIntent(ProfileActivity.class);
