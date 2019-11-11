@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button btnDangNhap , btnDangKy;
 
-    public  void AnhXa(){
+    public void AnhXa(){
         btnDangNhap = findViewById(R.id.dangnhap_main_button);
         btnDangKy = findViewById(R.id.dangky_main_button);
     }

@@ -37,7 +37,7 @@ public class LinhVucAdapter extends RecyclerView.Adapter<LinhVucAdapter.LinhVucV
     public void onBindViewHolder(@NonNull LinhVucAdapter.LinhVucViewHolder holder, int position) {
         LinhVuc linhVuc = this.mListLinhVuc.get(position);
         holder.text_linh_vuc.setText(linhVuc.getTenLinhVuc());
-        Picasso.with(this.context).load(linhVuc.getHinhAnh()).into(holder.img_linh_vuc);
+        Picasso.with(this.context).load("http://10.0.3.2:8000/images/linh-vuc/"  + linhVuc.getHinhAnh()).into(holder.img_linh_vuc);
     }
 
     @Override
