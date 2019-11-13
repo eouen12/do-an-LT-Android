@@ -20,8 +20,14 @@ public class DangKyActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DangKyActivity.this,MenuActivity.class));
-                //overridePendingTransition(R.anim.intent_enter,R.anim.intent_exit);
+                overridePendingTransition(R.anim.sile_right,R.anim.sile_out_left);
             }
         });
+    }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_left,R.anim.sile_out_right);
     }
 }

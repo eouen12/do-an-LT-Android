@@ -69,6 +69,7 @@
     <Button
         android:id="@+id/dangnhap_main_button"
         android:text="Đăng nhập"
+        android:onClick="launchActivityDangNhap"
         style="@style/style_button" />
 
     <Button
@@ -78,6 +79,7 @@
         android:onClick="launchActivityDangKy"/>
 
     <TextView
+        android:id="@+id/quenmatkhau_main_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Quên mật khẩu?"
@@ -86,7 +88,7 @@
         android:layout_marginTop="20dp"
         android:textSize="16sp"
         android:textStyle="italic"
-        android:textColor="@color/color_mute"/>
+        android:textColor="#00BCD4"/>
 
 
 </LinearLayout>

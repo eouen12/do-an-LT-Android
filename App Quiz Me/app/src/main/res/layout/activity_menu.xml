@@ -13,25 +13,32 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="1.5">
 
+<androidx.cardview.widget.CardView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="28dp"
+    app:cardCornerRadius="30dp"
+    android:onClick="launchActivityProfile"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
         <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="42dp"
-            android:layout_height="44dp"
-            android:layout_marginEnd="28dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/avata_menu_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             app:srcCompat="@drawable/avatar" />
+</androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/textView"
+            style="@style/style_text_title"
             android:text="Menu"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/style_text_title" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -72,6 +79,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/style_card_menu"
+            android:onClick="launchActivityRank"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -97,6 +105,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/style_card_menu"
+            android:onClick="launchActivityCredit"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -122,6 +131,7 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             style="@style/style_card_menu"
+            android:onClick="launchActivityMain"
             app:cardElevation="8dp"
             app:cardCornerRadius="8dp">
 
@@ -136,7 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="97dp"
                     android:layout_gravity="center_horizontal"
-                    android:src="@drawable/logout" />
+                    android:src="@drawable/icon_logout" />
                 <TextView
                     android:text="Đăng xuất"
                     style="@style/style_card_text" />

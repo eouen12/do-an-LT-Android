@@ -119,16 +119,42 @@
 
     <TextView
         android:id="@+id/quiz_thuthach_textview"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="Lorem ipsum dolor sit amet  dsfjkhsiuwer dsfsd"
         android:textColor="#000000"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/stt_cauhoi_thuthach_textview"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stt_cauhoi_thuthach_textview" />
+
+    <TextView
+        android:id="@+id/countdown_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="00"
+        android:textAlignment="center"
+        android:textColor="#03A9F4"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="@+id/quiz_thuthach_textview"
+        app:layout_constraintStart_toStartOf="@+id/quiz_thuthach_textview"
+        app:layout_constraintTop_toBottomOf="@+id/quiz_thuthach_textview" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:progressTint="#00BCD4"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonA"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/ButtonA"
+        app:layout_constraintTop_toBottomOf="@+id/countdown_textView" />
 
     <Button
         android:id="@+id/ButtonA"
@@ -137,13 +163,14 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_btn_thu_thach"
         android:onClick="ChonA"
         android:text="A. abc"
         android:textSize="20sp"
-        android:background="@drawable/custom_btn_thu_thach"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quiz_thuthach_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     <Button
         android:id="@+id/ButtonB"

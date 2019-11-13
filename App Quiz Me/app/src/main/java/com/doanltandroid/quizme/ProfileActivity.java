@@ -79,4 +79,10 @@ public class ProfileActivity extends AppCompatActivity {
             ibtnSuaTenNguoiChoi.setImageDrawable(getDrawable(R.drawable.pen));
         }
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_left,R.anim.sile_out_right);
+    }
 }

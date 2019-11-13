@@ -11,4 +11,10 @@ public class LayLaiMatKhauActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_laylaimatkhau);
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_left,R.anim.sile_out_right);
+    }
 }
