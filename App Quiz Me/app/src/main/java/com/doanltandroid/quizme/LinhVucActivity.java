@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -31,6 +32,12 @@ public class LinhVucActivity extends AppCompatActivity
     private ArrayList<LinhVuc> mListLinhVuc;
     private LinhVucAdapter adapter;
     private RecyclerView recyclerView;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+
+    private String token;
+
+    private final static String FILE_NAME_SHAREREF = "com.doanltandroid.quizme";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +50,15 @@ public class LinhVucActivity extends AppCompatActivity
         this.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         this.recyclerView.addItemDecoration(new LinhVucGridDirection(2, 58, true));
 
+        sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF, MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
+        token = sharedPreferences.getString("TOKEN", "");
+
+        if (token == "") {
+            finish();
+        }
+
         if (getSupportLoaderManager().getLoader(0) != null) {
             getSupportLoaderManager().initLoader(0, null, this);
         }
@@ -52,7 +68,7 @@ public class LinhVucActivity extends AppCompatActivity
     @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        return new LinhVucLoader(this);
+        return new LinhVucLoader(this, token);
     }
 
     @Override

@@ -9,6 +9,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 public class NetWorkUtils {
     private static final String LOG_TAG = NetWorkUtils.class.getSimpleName();
@@ -42,13 +44,17 @@ public class NetWorkUtils {
         return jsonString;
     }
 
-    static String getJSONData(String uri, String method, Object[] nameParams, Object[] valueParams) {
+    public static String doRequest(String uri, String method, HashMap<String, String> params, String token) {
         HttpURLConnection urlConnection = null;
         String jsonString = null;
         Uri.Builder builder =  Uri.parse(BASE_URL + uri).buildUpon();
-        for(int i=0; i<nameParams.length; i++) {
-            builder.appendQueryParameter(nameParams[i].toString(), valueParams[i].toString());
+
+        if (params != null) {
+            for(Map.Entry<String, String> pa : params.entrySet()) {
+                builder.appendQueryParameter(pa.getKey(), pa.getValue());
+            }
         }
+
         Uri builtURI = builder.build();
 
         try {
@@ -56,6 +62,11 @@ public class NetWorkUtils {
             URL requestURL = new URL(builtURI.toString());
             urlConnection = (HttpURLConnection) requestURL.openConnection();
             urlConnection.setRequestMethod(method);
+
+            if (token != null) {
+                urlConnection.setRequestProperty("Authorization", token);
+            }
+
             urlConnection.connect();
 
             // Get the InputStream.

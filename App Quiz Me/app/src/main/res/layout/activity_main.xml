@@ -49,6 +49,7 @@
     android:textColor="@color/color_mute" />
 
     <EditText
+        android:id="@+id/txtTenDangNhap"
         style="@style/style_edit_text" />
 
     <TextView
@@ -63,13 +64,14 @@
         android:textColor="@color/color_mute" />
 
     <EditText
+        android:id="@+id/txtMatKhau"
         style="@style/style_edit_text"
         android:inputType="textPassword"/>
 
     <Button
         android:id="@+id/dangnhap_main_button"
         android:text="Đăng nhập"
-        android:onClick="launchActivityDangNhap"
+        android:onClick="doLogin"
         style="@style/style_button" />
 
     <Button

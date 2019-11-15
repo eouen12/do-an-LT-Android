@@ -3,6 +3,7 @@ package com.doanltandroid.quizme;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -13,11 +14,15 @@ import android.widget.Toast;
 public class MenuActivity extends AppCompatActivity {
     ImageView imgThuThach, imgRanking, imgMuaCredit, imgDangXuat;
     boolean doubleBackToExitPressedOnce = false;
-
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        sharedPreferences = getSharedPreferences("com.doanltandroid.quizme", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
 //        imgThuThach     = findViewById(R.id.thuthach_menu_image);
 //        imgRanking      = findViewById(R.id.xephang_menu_image);
@@ -76,5 +81,11 @@ public class MenuActivity extends AppCompatActivity {
                 doubleBackToExitPressedOnce=false;
             }
         }, 3000);
+    }
+
+    public void doLogout(View view) {
+        editor.clear();
+        editor.apply();
+        finish();
     }
 }

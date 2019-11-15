@@ -125,14 +125,15 @@
             style="@style/style_card_menu"
             android:onClick="launchActivityMain"
             app:cardElevation="8dp"
-            app:cardCornerRadius="8dp">
+            app:cardCornerRadius="8dp" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_margin="16dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:onClick="doLogout">
 
                 <ImageView
                     android:layout_width="wrap_content"
