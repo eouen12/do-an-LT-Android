@@ -29,7 +29,7 @@ public class RankActivity extends AppCompatActivity{ //implements LoaderManager.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rank);
 
-        btnLichSuChoi = findViewById(R.id.lichsu_lichsuchoi_button);
+        //btnLichSuChoi = findViewById(R.id.lichsu_lichsuchoi_button);
 
         mRecyclerView = findViewById(R.id.rcv_ranking);
 

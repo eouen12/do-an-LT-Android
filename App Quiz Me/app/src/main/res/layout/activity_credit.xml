@@ -1,184 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint_credit"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:background="@drawable/bg"
     tools:context=".CreditActivity">
 
-
-    <TextView
-        android:id="@+id/title_credit_textview"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Mua Credit "
-        android:textColor="#03a9f4"
-        android:textSize="40dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/anhdaidien_credit_imageview"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:onClick="launchActivityProfile"
-        android:src="@drawable/jacklaing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/goiCredit_1_imagebutton"
-        android:layout_width="180dp"
-        android:layout_height="280dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:background="#5903A9F4"
-        android:src="@drawable/icon_credit"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_credit_textview" />
-
-    <ImageButton
-        android:id="@+id/goiCredit_3_imagebutton"
-        android:layout_width="180dp"
-        android:layout_height="280dp"
-        android:layout_marginStart="20dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:layout_marginTop="20dp"
-        android:background="#5903A9F4"
-        android:src="@drawable/icon_credit"
+        android:layout_marginLeft="30dp"
+        android:layout_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goiCredit_1_imagebutton" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageButton
-        android:id="@+id/goiCredit_2_imagebutton"
-        android:layout_width="180dp"
-        android:layout_height="280dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:background="#5903A9F4"
-        android:src="@drawable/icon_credit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_credit_textview" />
+        <include layout="@layout/activity_avata" />
 
-    <ImageButton
-        android:id="@+id/goiCredit_4_imagebutton"
-        android:layout_width="180dp"
-        android:layout_height="280dp"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:text="Mua Credit "
+            android:textColor="#FFFFFF"
+            android:textSize="32dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <GridLayout
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="#5903A9F4"
-        android:src="@drawable/icon_credit"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:columnCount="2"
+        android:padding="16dp"
+        android:rowCount="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goiCredit_2_imagebutton" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/so_tien_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="100000 VND"
-        android:textColor="#2196F3"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/goiCredit_1_imagebutton"
-        app:layout_constraintEnd_toEndOf="@+id/goiCredit_1_imagebutton"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="@+id/goiCredit_1_imagebutton" />
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            style="@style/style_card_menu">
 
-    <TextView
-        android:id="@+id/so_tien_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="1000"
-        android:textColor="#2196F3"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/goiCredit_2_imagebutton"
-        app:layout_constraintEnd_toEndOf="@+id/goiCredit_2_imagebutton"
-        app:layout_constraintStart_toStartOf="@+id/goiCredit_2_imagebutton" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/so_tien_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="20000"
-        android:textColor="#2196F3"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/goiCredit_3_imagebutton"
-        app:layout_constraintEnd_toEndOf="@+id/goiCredit_3_imagebutton"
-        app:layout_constraintStart_toStartOf="@+id/goiCredit_3_imagebutton" />
+                    <TextView
+                    android:id="@+id/so_tien_1"
+                    android:text="10000 GEM"
+                    style="@style/style_text_credit" />
 
-    <TextView
-        android:id="@+id/so_tien_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="50000"
-        android:textColor="#2196F3"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/goiCredit_4_imagebutton"
-        app:layout_constraintEnd_toEndOf="@+id/goiCredit_4_imagebutton"
-        app:layout_constraintStart_toStartOf="@+id/goiCredit_4_imagebutton" />
+                    <ImageView
+                        android:id="@+id/goiCredit_1_imagebutton"
+                        android:src="@drawable/icon_credit"
+                        style="@style/style_img_credit" />
 
-    <TextView
-        android:id="@+id/credit_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="1000 GEM"
-        android:textColor="#2196F3"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/goiCredit_1_imagebutton"
-        app:layout_constraintStart_toStartOf="@+id/goiCredit_1_imagebutton"
-        app:layout_constraintTop_toTopOf="@+id/goiCredit_1_imagebutton" />
+                    <TextView
+                        android:id="@+id/credit_1"
+                        android:text="1000 GEM"
+                        style="@style/style_text_credit" />
 
-    <TextView
-        android:id="@+id/credit_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="1000 GEM"
-        android:textAlignment="viewStart"
-        android:textColor="#2196F3"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/goiCredit_2_imagebutton"
-        app:layout_constraintStart_toStartOf="@+id/goiCredit_2_imagebutton"
-        app:layout_constraintTop_toTopOf="@+id/goiCredit_2_imagebutton" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            style="@style/style_card_menu">
 
-    <TextView
-        android:id="@+id/credit_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="10000 GEM"
-        android:textColor="#2196F3"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/goiCredit_3_imagebutton"
-        app:layout_constraintStart_toStartOf="@+id/goiCredit_3_imagebutton"
-        app:layout_constraintTop_toTopOf="@+id/goiCredit_3_imagebutton" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/credit_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="1000 GEM"
-        android:textColor="#2196F3"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/goiCredit_4_imagebutton"
-        app:layout_constraintStart_toStartOf="@+id/goiCredit_4_imagebutton"
-        app:layout_constraintTop_toTopOf="@+id/goiCredit_4_imagebutton" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <TextView
+                    android:id="@+id/so_tien_2"
+                    android:text="10000 GEM"
+                    style="@style/style_text_credit" />
+
+                <ImageView
+                    android:id="@+id/goiCredit_2_imagebutton"
+                    android:src="@drawable/icon_credit"
+                    style="@style/style_img_credit" />
+
+                <TextView
+                    android:id="@+id/credit_2"
+                    android:text="1000 GEM"
+                    style="@style/style_text_credit" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            style="@style/style_card_menu">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/so_tien_3"
+                    android:text="10000 GEM"
+                    style="@style/style_text_credit" />
+
+                <ImageView
+                    android:id="@+id/goiCredit_3_imagebutton"
+                    android:src="@drawable/icon_credit"
+                    style="@style/style_img_credit" />
+
+                <TextView
+                    android:id="@+id/credit_3"
+                    android:text="1000 GEM"
+                    style="@style/style_text_credit" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            app:cardElevation="8dp"
+            app:cardCornerRadius="8dp"
+            style="@style/style_card_menu">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal|center_vertical"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/so_tien_4"
+                    android:text="10000 GEM"
+                    style="@style/style_text_credit" />
+
+                <ImageView
+                    android:id="@+id/goiCredit_4_imagebutton"
+                    android:src="@drawable/icon_credit"
+                    style="@style/style_img_credit" />
+
+                <TextView
+                    android:id="@+id/credit_4"
+                    android:text="1000 GEM"
+                    style="@style/style_text_credit" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </GridLayout>
+</LinearLayout>

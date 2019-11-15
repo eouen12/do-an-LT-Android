@@ -37,11 +37,6 @@ public class ThuThachActivity extends AppCompatActivity {
  {
      btnA = findViewById(R.id.ButtonA);
      btnB = findViewById(R.id.ButtonB);
-     imgSinhMang1 = findViewById(R.id.sinhmang_1);
-     imgSinhMang2 = findViewById(R.id.sinhmang_2);
-     imgSinhMang3 = findViewById(R.id.sinhmang_3);
-     imgSinhMang4 = findViewById(R.id.sinhmang_4);
-     imgSinhMang5 = findViewById(R.id.sinhmang_5);
 
      mTextViewCountDown = findViewById(R.id.countdown_textView);
      mProgressBar = findViewById(R.id.progressBar);

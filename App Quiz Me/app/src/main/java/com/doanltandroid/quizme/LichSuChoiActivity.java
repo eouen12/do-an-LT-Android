@@ -15,7 +15,7 @@ public class LichSuChoiActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lich_su_choi);
 
-        btnRanking = findViewById(R.id.ranking_lichsuchoi_button);
+        //btnRanking = findViewById(R.id.ranking_lichsuchoi_button);
     }
 
     public void launchActivityRanking(View view) {

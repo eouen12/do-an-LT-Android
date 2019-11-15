@@ -22,61 +22,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView_thu_thach"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
     <ImageView
         android:id="@+id/anhdaidien_thuthach_imageview"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
         android:onClick="launchActivityProfile"
-        android:src="@drawable/jacklaing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+        android:src="@drawable/avatar"
+ />
+</androidx.cardview.widget.CardView>
     <ImageView
-        android:id="@+id/sinhmang_1"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="20dp"
+        android:id="@+id/sinhmang_image"
+        android:layout_width="60dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="10dp"
         android:src="@drawable/icon_heart_on"
         app:layout_constraintStart_toStartOf="@+id/title_thuthach_textview"
         app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
 
-    <ImageView
-        android:id="@+id/sinhmang_2"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/icon_heart_on"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/sinhmang_1"
-        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
 
-    <ImageView
-        android:id="@+id/sinhmang_3"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/icon_heart_on"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/sinhmang_2"
-        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
-
-    <ImageView
-        android:id="@+id/sinhmang_4"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/icon_heart_on"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/sinhmang_3"
-        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
-
-    <ImageView
-        android:id="@+id/sinhmang_5"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/icon_heart_on"
-        android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@+id/sinhmang_4"
-        app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
+    <TextView
+        android:id="@+id/so_mang_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="X5"
+        android:layout_marginTop="10dp"
+        android:textSize="32sp"
+        app:layout_constraintStart_toEndOf="@+id/sinhmang_image"
+        app:layout_constraintTop_toTopOf="@+id/sinhmang_image" />
 
     <ImageView
         android:id="@+id/credit_imageview"
@@ -85,36 +66,37 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@+id/credit_thuthach_textview"
-        app:layout_constraintTop_toBottomOf="@+id/anhdaidien_thuthach_imageview" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView_thu_thach" />
 
     <TextView
         android:id="@+id/credit_thuthach_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="60dp"
+        android:layout_marginTop="4dp"
         android:text="500"
         android:textSize="25sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/anhdaidien_thuthach_imageview" />
+        app:layout_constraintStart_toEndOf="@+id/iconCredit"
+        app:layout_constraintTop_toBottomOf="@+id/cardView_thu_thach" />
 
     <ImageView
         android:id="@+id/iconCredit"
         android:layout_width="28dp"
         android:layout_height="26dp"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/credit_thuthach_textview"
-        app:layout_constraintTop_toTopOf="@+id/credit_imageview"
+        android:layout_marginTop="8dp"
+
+        android:layout_marginEnd="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView_thu_thach"
         app:srcCompat="@drawable/icon_credit" />
 
     <TextView
         android:id="@+id/stt_cauhoi_thuthach_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         android:text="Câu hỏi số 1:"
         android:textSize="30sp"
-        app:layout_constraintStart_toStartOf="@+id/sinhmang_1"
+        app:layout_constraintStart_toStartOf="@+id/sinhmang_image"
         app:layout_constraintTop_toBottomOf="@+id/title_thuthach_textview" />
 
     <TextView
