@@ -48,7 +48,7 @@ public class LinhVucActivity extends AppCompatActivity
         this.adapter = new LinhVucAdapter(this, this.mListLinhVuc);
         this.recyclerView.setAdapter(this.adapter);
         this.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        this.recyclerView.addItemDecoration(new LinhVucGridDirection(2, 58, true));
+        this.recyclerView.addItemDecoration(new LinhVucGridDirection(2, 64, true));
 
         sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF, MODE_PRIVATE);
         editor = sharedPreferences.edit();
