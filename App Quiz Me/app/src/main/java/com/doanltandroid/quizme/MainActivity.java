@@ -7,6 +7,7 @@ import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -18,21 +19,20 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.doanltandroid.quizme.Loader.DangNhapLoader;
+import com.doanltandroid.quizme.Loader.DangNhapLoader1;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity
-                                    implements LoaderManager.LoaderCallbacks<String> {
+public class MainActivity extends AppCompatActivity {
 
     Button btnDangNhap , btnDangKy;
     TextView txtQuenMatKhau;
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
-    private HashMap<String, String> params;
 
     private final static String FILE_NAME_SHAREREF = "com.doanltandroid.quizme";
 
@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity
         btnDangNhap = findViewById(R.id.dangnhap_main_button);
         btnDangKy = findViewById(R.id.dangky_main_button);
         txtQuenMatKhau = findViewById(R.id.quenmatkhau_main_textview);
-        params = new HashMap<>();
         sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF, MODE_PRIVATE);
         editor = sharedPreferences.edit();
     }
@@ -61,7 +60,7 @@ public class MainActivity extends AppCompatActivity
         AnhXa();
 
         String token = sharedPreferences.getString("TOKEN", "");
-
+        Log.d("TOKEN", token);
         if (token != "") {
             Intent intent = new Intent(this, MenuActivity.class);
             startActivity(intent);
@@ -75,12 +74,12 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
-    public void launchActivityDangNhap(View view) {
-        setIntent(MenuActivity.class);
-    }
-
     public void launchActivityDangKy(View view) {
         setIntent(DangKyActivity.class);
+    }
+
+    public void launchActivityMenu() {
+        setIntent(MenuActivity.class);
     }
 
     public void doLogin(View view) {
@@ -90,47 +89,32 @@ public class MainActivity extends AppCompatActivity
         String tenDangNhap = txtTenDangNhap.getText().toString();
         String matKhau = txtMatKhau.getText().toString();
 
-        params.put("ten_dang_nhap", tenDangNhap);
-        params.put("password", matKhau);
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setTitle("Đang đăng nhập");
+        dialog.setMessage("Chờ xử lý...");
+        dialog.show();
+        new DangNhapLoader1(){
+            @Override
+            protected void onPostExecute(String s) {
+                dialog.cancel();
+                try {
+                    JSONObject json = new JSONObject(s);
+                    boolean success = json.getBoolean("success");
+                    if (success) {
+                        String token = "Bearer " + json.getString("token");
+                        editor.putString("TOKEN", token);
+                        editor.commit();
+                        launchActivityMenu();
+                    } else {
+                        String msg = json.getString("msg");
+                        taoThongBao("Thông báo", msg).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
 
-        if (getSupportLoaderManager().getLoader(0) != null) {
-            getSupportLoaderManager().initLoader(0, null, this);
-        }
-        getSupportLoaderManager().restartLoader(0, null, this);
-
-
-    }
-
-    @NonNull
-    @Override
-    public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        return new DangNhapLoader(this, "dang-nhap", "POST", params);
-    }
-
-    @Override
-    public void onLoadFinished(@NonNull Loader<String> loader, String data) {
-        Log.d("DATA-JSON", data);
-        try {
-            JSONObject object = new JSONObject(data);
-            Boolean success = object.getBoolean("success");
-            String msg = object.getString("msg");
-            if (success) {
-                String token = object.getString("token");
-                String type = object.getString("type");
-                editor.putString("TOKEN", type + " " + token);
-                editor.apply();
-                Intent intent = new Intent(this, MenuActivity.class);
-                startActivity(intent);
-            } else {
-                taoThongBao("Thông báo", msg).show();
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void onLoaderReset(@NonNull Loader<String> loader) {
+        }.execute(tenDangNhap, matKhau);
 
     }
 
