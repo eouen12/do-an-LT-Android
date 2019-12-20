@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity" >
+    tools:context=".MainActivity"
+    android:background="@drawable/background_login">
 
 
     <TextView
@@ -39,14 +40,15 @@
         android:src="@drawable/logo" />
 
     <TextView
-    android:id="@+id/textView3"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Email"
-    android:textSize="18sp"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="20dp"
-    android:textColor="@color/color_mute" />
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Email"
+        android:textColor="@color/color_mute"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/txtTenDangNhap"
@@ -56,12 +58,13 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Mật khẩu"
-        android:textSize="18sp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="8dp"
-        android:textColor="@color/color_mute" />
+        android:layout_marginEnd="20dp"
+        android:text="Mật khẩu"
+        android:textColor="@color/color_mute"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/txtMatKhau"
