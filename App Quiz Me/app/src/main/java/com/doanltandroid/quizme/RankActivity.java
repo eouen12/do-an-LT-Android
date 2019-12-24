@@ -8,10 +8,20 @@ import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+
+import com.doanltandroid.quizme.Adapter.NguoiChoiAdapter;
+import com.doanltandroid.quizme.Class.NguoiChoi;
+import com.doanltandroid.quizme.Loader.NguoiChoiLoader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -19,33 +29,38 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class RankActivity extends AppCompatActivity{ //implements LoaderManager.LoaderCallbacks<String> {
-    private Button btnLichSuChoi;
+public class RankActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<String> {
     private RecyclerView mRecyclerView;
-    private RankAdapter mRankAdapter;
-    private final ArrayList<NguoiChoi> mListNguoiChoi = new ArrayList<>();
+    private NguoiChoiAdapter mNguoiChoiAdapter;
+    private ArrayList<NguoiChoi> mListNguoiChoi;
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+    private String token;
+    private final static String FILE_NAME_SHAREREF = "com.doanltandroid.quizme";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rank);
 
-        //btnLichSuChoi = findViewById(R.id.lichsu_lichsuchoi_button);
+        this.mListNguoiChoi = new ArrayList<>();
+        this.mRecyclerView = this.findViewById(R.id.rcv_ranking);
+        this.mNguoiChoiAdapter = new NguoiChoiAdapter(this, this.mListNguoiChoi);
+        this.mRecyclerView.setAdapter(this.mNguoiChoiAdapter);
+        this.mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        mRecyclerView = findViewById(R.id.rcv_ranking);
+        sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF, MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        token = sharedPreferences.getString("TOKEN", "");
+        if(token == ""){
+            finish();
+        }
+        if (getSupportLoaderManager().getLoader(0) != null) {
+            getSupportLoaderManager().initLoader(0, null, this);
+        }
+        getSupportLoaderManager().restartLoader(0, null, this);
 
-        mRankAdapter = new RankAdapter(mListNguoiChoi,this);
-
-        mRecyclerView.setAdapter(mRankAdapter);
-
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        //if(getSupportLoaderManager().getLoader(0)!=null)
-        //{
-           // getSupportLoaderManager().initLoader(0,null,this);
-        //}
-        //getSupportLoaderManager().restartLoader(0,null,this);
     }
-
     public void launchActivityLichSuChoi(View view) {
         Intent intent = new Intent(getApplicationContext(),LichSuChoiActivity.class);
         startActivity(intent);
@@ -55,40 +70,32 @@ public class RankActivity extends AppCompatActivity{ //implements LoaderManager.
     public void launchActivityProfile(View view) {
         startActivity(new Intent(RankActivity.this,ProfileActivity.class));
     }
-
-
-
-   /* @NonNull
+    @NonNull
     @Override
     public Loader<String> onCreateLoader(int id, @Nullable Bundle args) {
-        return new RankLoader(this);
+        return new NguoiChoiLoader(this,token);
     }
-
     @Override
     public void onLoadFinished(@NonNull Loader<String> loader, String data) {
-        try {
-            JSONObject jsonObject = new JSONObject(data);
-            JSONArray itemArray = jsonObject.getJSONArray("dsnNguoiChoi");
-            for (int i=0;i<itemArray.length();i++)
-            {
-                String id = itemArray.getJSONObject(i).getString("id");
-                String tenDangNhap = itemArray.getJSONObject(i).getString("ten_dang_nhap");
-                String email = itemArray.getJSONObject(i).getString("email");
-                String hinhDaiDien = itemArray.getJSONObject(i).getString("hinh_dai_dien");
-                String diem = itemArray.getJSONObject(i).getString("diem_cao_nhat");
-                String credit = itemArray.getJSONObject(i).getString("credit");
-
-                this.mListNguoiChoi.add(new NguoiChoi(id,tenDangNhap,email,hinhDaiDien,diem,credit));
-
+        try{
+            JSONObject object = new JSONObject(data);
+            JSONArray itemArray = object.getJSONArray("data");
+            Log.d("rank",data);
+            for(int i=0; i<itemArray.length(); i++){
+                JSONObject item = itemArray.getJSONObject(i);
+                int id = item.getInt("id");
+                String tenDangNhap = item.getString("ten_dang_nhap");
+                int diem = item.getInt("diem_cao_nhat");
+                Log.d("DN",tenDangNhap);
+                mListNguoiChoi.add(new NguoiChoi(id,tenDangNhap,diem));
             }
-            this.mRankAdapter.notifyDataSetChanged();
-        } catch (JSONException e) {
+            mNguoiChoiAdapter.notifyDataSetChanged();
+        } catch (JSONException e){
             e.printStackTrace();
         }
     }
-
     @Override
     public void onLoaderReset(@NonNull Loader<String> loader) {
 
-    }*/
+    }
 }

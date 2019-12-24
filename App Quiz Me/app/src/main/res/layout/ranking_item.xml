@@ -11,7 +11,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     <TextView
-        android:id="@+id/vitri_rankitem_textview"
+        android:id="@+id/text_view_id_rank"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="8dp"
@@ -20,25 +20,25 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/anhdaidien_rankitem_imageview"
+        android:id="@+id/image_view_anhDD_rank"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintStart_toEndOf="@+id/vitri_rankitem_textview"
+        app:layout_constraintStart_toEndOf="@+id/text_view_id_rank"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tennguoichoi_rankitem_textview"
+        android:id="@+id/text_view_tenNC_rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        app:layout_constraintStart_toEndOf="@+id/anhdaidien_rankitem_imageview"
+        app:layout_constraintStart_toEndOf="@+id/image_view_anhDD_rank"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/diem_rankitem_textview"
+        android:id="@+id/text_view_diem_rank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -57,7 +57,7 @@
         android:text="điểm"
         android:textColor="#E91E63"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/diem_rankitem_textview"
+        app:layout_constraintStart_toEndOf="@+id/text_view_diem_rank"
         app:layout_constraintTop_toTopOf="parent" />
 
 
