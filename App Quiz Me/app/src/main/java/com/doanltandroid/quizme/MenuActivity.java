@@ -85,7 +85,7 @@ public class MenuActivity extends AppCompatActivity {
 
     public void doLogout(View view) {
         editor.clear();
-        editor.apply();
+        editor.commit();
         finish();
     }
 }

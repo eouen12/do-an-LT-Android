@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
-    private final static String FILE_NAME_SHAREREF = "com.doanltandroid.quizme";
+    private static final String FILE_NAME_SHAREREF = "com.doanltandroid.quizme";
 
     public void AnhXa(){
         btnDangNhap = findViewById(R.id.dangnhap_main_button);
@@ -50,6 +50,16 @@ public class MainActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.sile_right,R.anim.sile_out_left);
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        String token = sharedPreferences.getString("TOKEN", "");
+        Log.d("TOKEN", token);
+        if (token != "") {
+            Intent intent = new Intent(this, MenuActivity.class);
+            startActivity(intent);
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,7 +5,8 @@
     android:id="@+id/Constraint_laylaimatkhau"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LayLaiMatKhauActivity">
+    tools:context=".LayLaiMatKhauActivity"
+    android:background="@drawable/background_login">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -14,30 +15,14 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.3" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background_login"
-        android:scaleType="matrix"/>
 
     <TextView
         android:id="@+id/title_laylaimatkhau_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:text="Quên mật khẩu"
-        android:textColor="#03a9f4"
-        android:textSize="40sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/style_title_text_activity" />
 
     <EditText
         android:id="@+id/tendangnhap_laylaimatkhau_edittext"
