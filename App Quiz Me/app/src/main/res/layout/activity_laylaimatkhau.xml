@@ -8,13 +8,6 @@
     tools:context=".LayLaiMatKhauActivity"
     android:background="@drawable/background_login">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3" />
-
 
     <TextView
         android:id="@+id/title_laylaimatkhau_textview"
@@ -24,72 +17,67 @@
         app:layout_constraintTop_toTopOf="parent"
         style="@style/style_title_text_activity" />
 
-    <EditText
-        android:id="@+id/tendangnhap_laylaimatkhau_edittext"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="#00BCD4"
-        android:hint="Nhập tên đăng nhập"
-        android:inputType="text"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView7"
-        app:layout_constraintEnd_toEndOf="@+id/title_laylaimatkhau_textview"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline2" />
-
-    <EditText
-        android:id="@+id/email_laylaimatkhau_edittext"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#00BCD4"
-        android:hint="Nhập Email đã đăng ký"
-        android:inputType="textEmailAddress"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView8"
-        app:layout_constraintEnd_toEndOf="@+id/tendangnhap_laylaimatkhau_edittext"
-        app:layout_constraintStart_toStartOf="@+id/tendangnhap_laylaimatkhau_edittext" />
-
-    <Button
-        android:id="@+id/laylaimatkhau_button"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:background="@drawable/custom_button"
-        android:text="Lấy lại mật khẩu"
-        android:textColor="@color/color_Text_White"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <TextView
-        android:id="@+id/textView7"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Tên Đăng Nhập"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_laylaimatkhau_textview" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="256dp"
+        app:layout_constraintGuide_percent="0.4" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="0dp"
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Đia Chỉ Email"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/guideline2"
-        app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="54dp"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="332dp"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <include
+        android:id="@+id/layoutSendEmail"
+        layout="@layout/layout_input_password"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        android:visibility="visible"/>
+
+    <include
+        android:id="@+id/layoutConfirmCode"
+        layout="@layout/layout_confirm_code_reset_pwd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        android:visibility="gone"/>
+
+
+    <include
+        android:id="@+id/layoutResetPwd"
+        layout="@layout/layout_reset_password"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline6"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
