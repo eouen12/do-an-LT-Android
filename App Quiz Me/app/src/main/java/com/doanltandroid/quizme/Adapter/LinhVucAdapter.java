@@ -1,6 +1,7 @@
 package com.doanltandroid.quizme.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.doanltandroid.quizme.Class.LinhVuc;
 import com.doanltandroid.quizme.R;
+import com.doanltandroid.quizme.ThuThachActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ public class LinhVucAdapter extends RecyclerView.Adapter<LinhVucAdapter.LinhVucV
         return this.mListLinhVuc.size();
     }
 
-    public class LinhVucViewHolder extends RecyclerView.ViewHolder {
+    public class LinhVucViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView text_linh_vuc;
         private ImageView img_linh_vuc;
         private LinhVucAdapter adapter;
@@ -54,6 +56,16 @@ public class LinhVucAdapter extends RecyclerView.Adapter<LinhVucAdapter.LinhVucV
             this.adapter = adapter;
             this.text_linh_vuc = itemView.findViewById(R.id.text_linh_vuc);
             this.img_linh_vuc = itemView.findViewById(R.id.img_linh_vuc);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(context, ThuThachActivity.class);
+            int position = this.getPosition();
+            LinhVuc linhVucs = mListLinhVuc.get(position);
+            intent.putExtra("ID_LinhVuc", linhVucs.getId());
+            context.startActivity(intent);
         }
     }
 }
