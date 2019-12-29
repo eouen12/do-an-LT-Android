@@ -112,6 +112,10 @@ public class MainActivity extends AppCompatActivity {
                     boolean success = json.getBoolean("success");
                     if (success) {
                         String token = "Bearer " + json.getString("token");
+                        String id = json.getJSONObject("user").getString("id");
+                        Log.d("USER_ID",id+"");
+                        editor.putString("ID_USER",id);
+                        editor.commit();
                         editor.putString("TOKEN", token);
                         editor.commit();
                         launchActivityMenu();
