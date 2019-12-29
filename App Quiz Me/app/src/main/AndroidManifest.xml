@@ -27,7 +27,12 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ProfileActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" >
+
+
+
+
+        </activity>
         <activity
             android:name=".LayLaiMatKhauActivity"
             android:screenOrientation="portrait" />

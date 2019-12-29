@@ -7,224 +7,247 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
-    <TextView
-        android:id="@+id/tentitleNguoiChoi_profile_textview"
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/tennguoichoi_proffle"
-        android:textColor="#000000"
-        android:textSize="24sp"
-        app:layout_constraintStart_toEndOf="@+id/cardView"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".85" />
 
-    <TextView
-        android:id="@+id/socredit_profile_textview"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="500"
-        android:textColor="#000000"
-        android:textSize="25sp"
-        app:layout_constraintStart_toEndOf="@+id/iconCredit"
-        app:layout_constraintTop_toBottomOf="@+id/tentitleNguoiChoi_profile_textview" />
-
-    <ImageView
-        android:id="@+id/iconCredit"
-        android:layout_width="28dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/tentitleNguoiChoi_profile_textview"
-        app:layout_constraintTop_toBottomOf="@+id/tentitleNguoiChoi_profile_textview"
-        app:srcCompat="@drawable/icon_credit" />
-
-    <TextView
-        android:id="@+id/hoten"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Họ tên:"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Email:"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/hoten"
-        app:layout_constraintTop_toBottomOf="@+id/hoten" />
-
-    <TextView
-        android:id="@+id/matkhau"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="Mật khẩu:"
-        android:textSize="15sp"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/email" />
-
-    <EditText
-        android:id="@+id/tennguoichoi_profile_edittext"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#00BCD4"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="textPersonName"
-        android:text="@string/tennguoichoi_proffle"
-        android:textSize="15sp"
-        app:layout_constraintStart_toEndOf="@+id/hoten"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <ImageButton
-        android:id="@+id/suatennguoichoi_profile_imagebutton"
-        android:layout_width="50dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:background="@null"
-        android:onClick="suaTenNguoiChoi"
-        android:src="@drawable/pen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.03"
-        app:layout_constraintStart_toEndOf="@+id/tennguoichoi_profile_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <EditText
-        android:id="@+id/email_profile_edittext"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:backgroundTint="#00BCD4"
-        android:ems="10"
-        android:enabled="false"
-        android:inputType="textPersonName"
-        android:text="abc@gmail"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toStartOf="@+id/suatennguoichoi_profile_imagebutton"
-        app:layout_constraintStart_toStartOf="@+id/tennguoichoi_profile_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/tennguoichoi_profile_edittext" />
-
-    <TextView
-        android:id="@+id/matkhau_profile_textview"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="*****************"
-        android:textColor="#000000"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="@+id/email_profile_edittext"
-        app:layout_constraintStart_toStartOf="@+id/email_profile_edittext"
-        app:layout_constraintTop_toBottomOf="@+id/email_profile_edittext" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".15" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        app:cardCornerRadius="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/cardView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline13">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hạng"
+                    android:textColor="@color/colorSecodary"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30000"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tổng Điểm"
+                    android:textColor="@color/colorSecodary"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="300"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="GEM"
+                    android:textColor="@color/colorSecodary"
+                    android:textSize="12dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/anhdaidien_profile_imagevie"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/avatar" />
-    </androidx.cardview.widget.CardView>
-    <CheckBox
-        android:id="@+id/doimatkhau_profile_checkBox"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:paddingBottom="10dp"
+            android:src="@drawable/jacklaing" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:text="Trần Triển Chí"
+            android:textColor="@color/color_Text_White"
+            android:textSize="25dp" />
+
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="#00BCD4"
-        android:buttonTint="#00BCD4"
-        android:text="Đổi mật khẩu"
-        app:layout_constraintStart_toStartOf="@+id/matkhau"
-        app:layout_constraintTop_toBottomOf="@+id/matkhau" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="203dp"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="376dp"
+        app:layout_constraintGuide_percent=".33" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="385dp"
+        app:layout_constraintGuide_percent="0.46" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="548dp"
+        app:layout_constraintGuide_percent="0.7" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/doimatkhau_profile_constrain"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/matkhau_profile_textview"
-        app:layout_constraintStart_toStartOf="@+id/matkhau"
-        app:layout_constraintTop_toBottomOf="@+id/doimatkhau_profile_checkBox">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline15"
+        app:layout_constraintEnd_toStartOf="@+id/guideline19"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideline18"
+        app:layout_constraintTop_toTopOf="@+id/guideline14"
+        app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/matkhaumoi"
+        <ImageView
+            android:id="@+id/imageView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mật khẩu mới:"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
-            android:textSize="15sp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <EditText
-            android:id="@+id/matkhaumoi_profile_edittext"
-            android:layout_width="220dp"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#00BCD4"
-            android:ems="10"
-            android:layout_marginLeft="40dp"
-            android:hint="Mật khẩu mới"
-            android:inputType="textPassword"
-            android:textSize="15sp"
-
-            app:layout_constraintStart_toEndOf="@+id/matkhaumoi"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_info" />
 
         <TextView
-            android:id="@+id/rematkhaumoi"
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nhập lại mật khẩu:"
-            android:textSize="15sp"
-            android:layout_marginTop="25dp"
-            app:layout_constraintEnd_toStartOf="@+id/rematkhaumoi_profile_edittext"
-            app:layout_constraintStart_toStartOf="@+id/matkhaumoi"
-            app:layout_constraintTop_toBottomOf="@+id/matkhaumoi" />
+            android:paddingLeft="10dp"
+            android:text="Trần Triển Chí"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
+            app:layout_constraintStart_toEndOf="@+id/imageView8"
+            app:layout_constraintTop_toTopOf="@+id/imageView8" />
 
-        <EditText
-            android:id="@+id/rematkhaumoi_profile_edittext"
-            android:layout_width="0dp"
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#00BCD4"
-            android:ems="10"
-            android:hint="Nhập lại mật khẩu mới"
-            android:inputType="textPassword"
-            android:textSize="15sp"
-            app:layout_constraintEnd_toEndOf="@+id/matkhaumoi_profile_edittext"
-            app:layout_constraintStart_toStartOf="@+id/matkhaumoi_profile_edittext"
-            app:layout_constraintTop_toBottomOf="@+id/matkhaumoi_profile_edittext" />
+            android:layout_marginTop="24dp"
+            app:layout_constraintStart_toStartOf="@+id/imageView8"
+            app:layout_constraintTop_toBottomOf="@+id/imageView8"
+            app:srcCompat="@drawable/icon_mail" />
 
-        <Button
-            android:id="@+id/doimatkhau_profile_button"
-            android:layout_width="150dp"
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/custom_button"
-            android:text="Xác nhận"
-            android:layout_marginTop="8dp"
-            android:textColor="@color/color_Text_White"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="@+id/rematkhaumoi_profile_edittext"
-            app:layout_constraintStart_toStartOf="@+id/rematkhaumoi_profile_edittext"
-            app:layout_constraintTop_toBottomOf="@+id/rematkhaumoi_profile_edittext" />
+            android:paddingLeft="10dp"
+            android:text="trienchi@email.com"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toTopOf="@+id/imageView9" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnChangeInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:text="Thay đổi thông tin"
+        style="@style/style_button"
+        app:layout_constraintEnd_toStartOf="@+id/guideline19"
+        app:layout_constraintStart_toStartOf="@+id/guideline18"
+        app:layout_constraintTop_toTopOf="@+id/guideline15" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
