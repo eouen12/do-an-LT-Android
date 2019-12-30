@@ -113,7 +113,10 @@ public class MainActivity extends AppCompatActivity {
                     if (success) {
                         String token = "Bearer " + json.getString("token");
                         String id = json.getJSONObject("user").getString("id");
+                        String hoten = json.getJSONObject("user").getString("ho_ten");
                         Log.d("USER_ID",id+"");
+                        editor.putString("HOTEN",hoten);
+                        editor.commit();
                         editor.putString("ID_USER",id);
                         editor.commit();
                         editor.putString("TOKEN", token);
