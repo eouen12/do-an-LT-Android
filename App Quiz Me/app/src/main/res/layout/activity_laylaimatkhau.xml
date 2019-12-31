@@ -55,17 +55,6 @@
         app:layout_constraintTop_toTopOf="@+id/guideline"
         android:visibility="visible"/>
 
-    <include
-        android:id="@+id/layoutConfirmCode"
-        layout="@layout/layout_confirm_code_reset_pwd"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline6"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/guideline"
-        android:visibility="gone"/>
 
 
     <include

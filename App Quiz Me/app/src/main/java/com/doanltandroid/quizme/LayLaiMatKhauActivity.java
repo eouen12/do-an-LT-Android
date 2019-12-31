@@ -21,7 +21,7 @@ public class LayLaiMatKhauActivity extends AppCompatActivity {
     private EditText txtInputForgotPwd;
     private Button btnForgotPwd;
     private ProgressDialog dialog;
-    private View layoutSendEmail, layoutResetPwd, layoutConfirmCode;
+    private View layoutSendEmail, layoutResetPwd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +39,6 @@ public class LayLaiMatKhauActivity extends AppCompatActivity {
 
         layoutResetPwd = (View) findViewById(R.id.layoutResetPwd);
         layoutSendEmail = (View) findViewById(R.id.layoutSendEmail);
-        layoutConfirmCode = (View) findViewById(R.id.layoutConfirmCode);
     }
 
     @Override
@@ -66,7 +65,7 @@ public class LayLaiMatKhauActivity extends AppCompatActivity {
                         taoThongBao("Lỗi", msg).show();
                     } else {
                         layoutSendEmail.setVisibility(View.GONE);
-                        layoutConfirmCode.setVisibility(View.VISIBLE);
+                        layoutResetPwd.setVisibility(View.VISIBLE);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
