@@ -54,6 +54,7 @@ public class ThuThachActivity extends AppCompatActivity implements LoaderManager
 
     private int idLinhVuc;
     private String user_id;
+    private String hoten;
     private String dapAn;
 
     private SQLiteHelper sqLiteHelper;
@@ -101,7 +102,9 @@ public class ThuThachActivity extends AppCompatActivity implements LoaderManager
         editor = sharedPreferences.edit();
         token = sharedPreferences.getString("TOKEN", "");
         user_id = sharedPreferences.getString("ID_USER","");
-        Log.d("users",user_id);
+        hoten = sharedPreferences.getString("HOTEN","");
+
+        Log.d("users",hoten);
         if (token == "") {
             finish();
         }
@@ -231,14 +234,14 @@ public class ThuThachActivity extends AppCompatActivity implements LoaderManager
         }
         else
         {
-
+            thongBaoLuuLuotChoi();
         }
     }
 
     public void thongBaoLuuLuotChoi()
     {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Chức mừng bạn: Trần Triển Chí");
+        builder.setTitle("Chức mừng bạn: ́"+hoten);
         builder.setMessage("Số câu trả lời đúng: "+soCauTLDung + "\nTổng điểm: "+txtDiem.getText());
         builder.setCancelable(false);
         builder.setNegativeButton("Lưu kết quả", new DialogInterface.OnClickListener() {
