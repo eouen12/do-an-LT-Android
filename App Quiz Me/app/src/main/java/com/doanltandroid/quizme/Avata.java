@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class Avata extends AppCompatActivity {
-    private CircleImageView imgHinhDaiDien;
+    private ImageView imgHinhDaiDien;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
     private static final String FILE_NAME_SHAREREF = "com.doanltandroid.quizme";

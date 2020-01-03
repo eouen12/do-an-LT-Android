@@ -13,10 +13,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.doanltandroid.quizme.Adapter.CreditAdapter;
 import com.doanltandroid.quizme.Class.Credit;
 import com.doanltandroid.quizme.Loader.CreditLoader;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,6 +34,10 @@ public class CreditActivity extends AppCompatActivity implements LoaderManager.L
     private CreditAdapter adapter;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+
+
+    private ImageView avatarImg;
+    private TextView txtSoCredit;
 
     private String token;
 
@@ -60,6 +67,14 @@ public class CreditActivity extends AppCompatActivity implements LoaderManager.L
             getSupportLoaderManager().initLoader(0, null, this);
         }
         getSupportLoaderManager().restartLoader(0, null, this);
+
+        avatarImg = findViewById(R.id.avata_img);
+        txtSoCredit = findViewById(R.id.so_credit);
+
+        String avatar = sharedPreferences.getString("AVATAR", "avatar_temp.jpg");
+        int credit = sharedPreferences.getInt("CREDIT", -1);
+        Picasso.with(this).load("http://10.0.3.2:8000/storage/avatar/"  + avatar).into(avatarImg);
+        txtSoCredit.setText(credit + "");
     }
 
     @Override

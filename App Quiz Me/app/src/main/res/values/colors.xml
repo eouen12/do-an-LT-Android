@@ -5,7 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="color_Text_White">#FFFFFF</color>
     <color name="color_title">#B4ABAB</color>
-    <color name="color_mute">#C5CCD6</color>
+    <color name="color_mute">#7C7C7C</color>
     <color name="disable_primary">#D743ABE0</color>
     <color name="colorSecodary">#5190BD</color>
 </resources>

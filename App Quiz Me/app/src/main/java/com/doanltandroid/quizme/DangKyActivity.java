@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
@@ -44,6 +45,9 @@ public class DangKyActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+
+    private static final String FILE_NAME_SHAREREF = "com.doanltandroid.quizme";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +84,7 @@ public class DangKyActivity extends AppCompatActivity {
         colorPrimary = ContextCompat.getColor(this, R.color.colorPrimary);
         colorDisablePrimary = ContextCompat.getColor(this, R.color.disable_primary);
 
-        sharedPreferences = getSharedPreferences(getResources().getString(R.string.file_name_shared_preferences), MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF, MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
         txtUserName.requestFocus();
@@ -166,11 +170,18 @@ public class DangKyActivity extends AppCompatActivity {
                 btnRegister.setBackgroundColor(colorPrimary);
                 try {
                     JSONObject obj = new JSONObject(s);
-                    boolean status = obj.getBoolean("status");
-
-                    if (status) {
+                    Boolean success = obj.getBoolean("success");
+                    Log.d("json-data", s);
+                    if (success) {
+                        String id = obj.getString("id");
+                        String avatar = obj.getString("avatar");
+                        int credit = obj.getInt("credit");
                         String token = "Bearer " + obj.getString("token");
+                        Log.d("ID", id);
+                        editor.putString("ID_USER", id + "");
+                        editor.putString("AVATAR", avatar);
                         editor.putString("TOKEN", token);
+                        editor.putInt("CREDIT", credit);
                         editor.commit();
                         finish();
                     } else {

@@ -47,7 +47,7 @@
         android:layout_marginEnd="20dp"
         android:text="Email"
         android:textColor="@color/color_mute"
-        android:textSize="18sp"
+        android:textSize="19sp"
         android:textStyle="bold" />
 
     <EditText
@@ -91,9 +91,9 @@
         android:layout_marginStart="240dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
-        android:textSize="20sp"
+        android:textSize="17sp"
         android:textStyle="italic"
-        android:textColor="#00BCD4"/>
+        android:textColor="#B0DBFF"/>
 
 
 </LinearLayout>

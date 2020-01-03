@@ -23,7 +23,7 @@
     <ImageView
         android:id="@+id/sinhmang_image"
         android:layout_width="60dp"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/icon_heart_on"
         app:layout_constraintStart_toStartOf="@+id/title_thuthach_textview"
@@ -35,8 +35,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="5"
-        android:layout_marginTop="10dp"
         android:textSize="32sp"
+        app:layout_constraintBottom_toBottomOf="@+id/sinhmang_image"
         app:layout_constraintStart_toEndOf="@+id/sinhmang_image"
         app:layout_constraintTop_toTopOf="@+id/sinhmang_image" />
 

@@ -14,10 +14,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.doanltandroid.quizme.Adapter.LinhVucAdapter;
 import com.doanltandroid.quizme.Class.LinhVuc;
 import com.doanltandroid.quizme.Loader.LinhVucLoader;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +37,8 @@ public class LinhVucActivity extends AppCompatActivity
     private RecyclerView recyclerView;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    private ImageView avatarImg;
+    private TextView txtSoCredit;
 
     private String token;
 
@@ -48,7 +53,7 @@ public class LinhVucActivity extends AppCompatActivity
         this.adapter = new LinhVucAdapter(this, this.mListLinhVuc);
         this.recyclerView.setAdapter(this.adapter);
         this.recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
-        this.recyclerView.addItemDecoration(new LinhVucGridDirection(2, 64, true));
+        this.recyclerView.addItemDecoration(new LinhVucGridDirection(2, 45, true));
 
         sharedPreferences = getSharedPreferences(FILE_NAME_SHAREREF, MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -63,6 +68,14 @@ public class LinhVucActivity extends AppCompatActivity
             getSupportLoaderManager().initLoader(0, null, this);
         }
         getSupportLoaderManager().restartLoader(0, null, this);
+
+        avatarImg = findViewById(R.id.avata_img);
+        txtSoCredit = findViewById(R.id.so_credit);
+
+        String avatar = sharedPreferences.getString("AVATAR", "avatar_temp.jpg");
+        int credit = sharedPreferences.getInt("CREDIT", -1);
+        Picasso.with(this).load("http://10.0.3.2:8000/storage/avatar/"  + avatar).into(avatarImg);
+        txtSoCredit.setText(credit + "");
     }
 
     @NonNull

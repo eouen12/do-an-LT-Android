@@ -68,7 +68,7 @@ public class ProfileActivity extends AppCompatActivity {
         String id = sharedPreferences.getString("ID_USER", "-1");
         String token = sharedPreferences.getString("TOKEN", "");
 
-
+        Log.d("ID-USER", id);
 
         new ThongTinNguoiChoiLoader(){
             @Override

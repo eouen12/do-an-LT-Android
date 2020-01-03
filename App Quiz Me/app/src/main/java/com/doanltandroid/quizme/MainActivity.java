@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                         String avatar = json.getJSONObject("user").getString("hinh_dai_dien");
                         String email = json.getJSONObject("user").getString("email");
                         String tenDangNhap = json.getJSONObject("user").getString("ten_dang_nhap");
+                        int credit = json.getJSONObject("user").getInt("credit");
                         Log.d("USER_ID",id+"");
                         editor.putString("HOTEN",hoten);
                         editor.putString("AVATAR", avatar);
@@ -124,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.putString("EMAIL", email);
                         editor.putString("USER_NAME", tenDangNhap);
                         editor.putString("TOKEN", token);
+                        editor.putInt("CREDIT", credit);
                         editor.commit();
                         launchActivityMenu();
                     } else {

@@ -328,4 +328,11 @@ public class ThuThachActivity extends AppCompatActivity implements LoaderManager
      btnC.setBackgroundResource(R.drawable.custom_btn_thu_thach);
      btnD.setBackgroundResource(R.drawable.custom_btn_thu_thach);
     }
+
+    @Override
+    public void finish() {
+        super.finish();
+        Intent intent = new Intent(this, MenuActivity.class);
+        startActivity(intent);
+    }
 }

@@ -6,16 +6,22 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 public class MenuActivity extends AppCompatActivity {
-    ImageView imgThuThach, imgRanking, imgMuaCredit, imgDangXuat;
-    boolean doubleBackToExitPressedOnce = false;
+//    ImageView imgThuThach, imgRanking, imgMuaCredit, imgDangXuat;
+    private ImageView avatarImg;
+    private TextView txtSoCredit;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    boolean doubleBackToExitPressedOnce = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,10 +30,17 @@ public class MenuActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("com.doanltandroid.quizme", MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-//        imgThuThach     = findViewById(R.id.thuthach_menu_image);
-//        imgRanking      = findViewById(R.id.xephang_menu_image);
-//        imgMuaCredit    = findViewById(R.id.muacredit_menu_image);
-//        imgDangXuat     = findViewById(R.id.dangxuat_menu_image);
+        avatarImg = findViewById(R.id.avata_img);
+        txtSoCredit = findViewById(R.id.so_credit);
+
+        String avatar = sharedPreferences.getString("AVATAR", "avatar_temp.jpg");
+        int credit = sharedPreferences.getInt("CREDIT", -1);
+        Picasso.with(this).load("http://10.0.3.2:8000/storage/avatar/"  + avatar).into(avatarImg);
+        txtSoCredit.setText(credit + "");
+
+        String id = sharedPreferences.getString("ID_USER", "-1");
+        Log.d("ID-MENU", id);
+
 
     }
 

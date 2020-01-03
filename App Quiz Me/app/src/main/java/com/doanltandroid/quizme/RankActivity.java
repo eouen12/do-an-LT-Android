@@ -15,10 +15,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.doanltandroid.quizme.Adapter.RankAdapter;
 import com.doanltandroid.quizme.Class.NguoiChoi;
 import com.doanltandroid.quizme.Loader.RankLoader;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,6 +48,8 @@ public class RankActivity extends AppCompatActivity implements LoaderManager.Loa
     private final static String FILE_NAME_SHAREREF = "com.doanltandroid.quizme";
 
 
+    private ImageView avatarImg;
+    private TextView txtSoCredit;
 
 
     @Override
@@ -102,6 +107,14 @@ public class RankActivity extends AppCompatActivity implements LoaderManager.Loa
                 }
             }
         });
+
+        avatarImg = findViewById(R.id.avata_img);
+        txtSoCredit = findViewById(R.id.so_credit);
+
+        String avatar = sharedPreferences.getString("AVATAR", "avatar_temp.jpg");
+        int credit = sharedPreferences.getInt("CREDIT", -1);
+        Picasso.with(this).load("http://10.0.3.2:8000/storage/avatar/"  + avatar).into(avatarImg);
+        txtSoCredit.setText(credit + "");
 
 
     }
