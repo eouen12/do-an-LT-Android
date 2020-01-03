@@ -154,6 +154,43 @@ public class NetWorkUtils {
         }
         return jsonString;
     }
+    public static String postRequest(String uri, HashMap<String, String> postDataParams, String token) {
+        String jsonString = null;
+        URL url;
+        try {
+            url = new URL(BASE_URL + uri);
+
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setReadTimeout(15000);
+            conn.setConnectTimeout(15000);
+            conn.setRequestMethod("POST");
+            if (token != null) {
+                conn.setRequestProperty("Authorization", token);
+            }
+            conn.setDoInput(true);
+            conn.setDoOutput(true);
+
+            // Dua param vao body request
+            OutputStream os = conn.getOutputStream();
+            BufferedWriter writer = new BufferedWriter(
+                    new OutputStreamWriter(os, "UTF-8"));
+            writer.write(getPostDataString(postDataParams));
+            writer.flush();
+            writer.close();
+            os.close();
+
+            int responseCode = conn.getResponseCode();
+
+            if (responseCode == HttpsURLConnection.HTTP_OK) {
+                jsonString = convertToString(conn.getInputStream());
+            } else {
+                jsonString = "{'success': false}";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return jsonString;
+    }
 
     private static String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
         StringBuilder result = new StringBuilder();

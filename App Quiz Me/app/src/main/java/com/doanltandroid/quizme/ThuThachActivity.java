@@ -234,29 +234,17 @@ public class ThuThachActivity extends AppCompatActivity implements LoaderManager
         }
         else
         {
-            thongBaoLuuLuotChoi();
+            luuLuotChoi();
         }
     }
-
-    public void thongBaoLuuLuotChoi()
+    public void luuLuotChoi ()
     {
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Chức mừng bạn: ́"+hoten);
-        builder.setMessage("Số câu trả lời đúng: "+soCauTLDung + "\nTổng điểm: "+txtDiem.getText());
-        builder.setCancelable(false);
-        builder.setNegativeButton("Lưu kết quả", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                new LuotChoiLoader().execute(user_id, soCauTLDung + "", txtDiem + "");
-            }
-        });
-        builder.setPositiveButton("Thoát", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                startActivity(new Intent(getApplicationContext(), MenuActivity.class));
-            }
-        });
-        builder.create().show();
+        editor.putString("SOCAU",soCauTLDung+"");
+        editor.commit();
+        editor.putString("DIEM",txtDiem.getText().toString());
+        editor.commit();
+        Intent intent = new Intent(getApplicationContext(),LuuLuotChoiActivity.class);
+        startActivity(intent);
     }
 
     public AlertDialog taoThongBao(String tieuDe, String thongBao) {

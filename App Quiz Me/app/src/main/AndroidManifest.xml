@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RankActivity"></activity>
+        <activity android:name=".LuuLuotChoiActivity"></activity>
+        <activity android:name=".RankActivity" />
         <activity android:name=".Avata" />
         <activity
             android:name=".LichSuChoiActivity"
@@ -27,12 +28,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ProfileActivity"
-            android:screenOrientation="portrait" >
-
-
-
-
-        </activity>
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".LayLaiMatKhauActivity"
             android:screenOrientation="portrait" />
@@ -48,13 +44,11 @@
         <activity
             android:name=".MainActivity"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
