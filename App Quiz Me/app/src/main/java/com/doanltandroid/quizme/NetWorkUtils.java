@@ -164,9 +164,7 @@ public class NetWorkUtils {
             conn.setReadTimeout(15000);
             conn.setConnectTimeout(15000);
             conn.setRequestMethod("POST");
-            if (token != null) {
-                conn.setRequestProperty("Authorization", token);
-            }
+            conn.setRequestProperty("Authorization", token);
             conn.setDoInput(true);
             conn.setDoOutput(true);
 

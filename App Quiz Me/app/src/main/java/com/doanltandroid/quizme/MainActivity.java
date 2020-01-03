@@ -114,11 +114,15 @@ public class MainActivity extends AppCompatActivity {
                         String token = "Bearer " + json.getString("token");
                         String id = json.getJSONObject("user").getString("id");
                         String hoten = json.getJSONObject("user").getString("ho_ten");
+                        String avatar = json.getJSONObject("user").getString("hinh_dai_dien");
+                        String email = json.getJSONObject("user").getString("email");
+                        String tenDangNhap = json.getJSONObject("user").getString("ten_dang_nhap");
                         Log.d("USER_ID",id+"");
                         editor.putString("HOTEN",hoten);
-                        editor.commit();
+                        editor.putString("AVATAR", avatar);
                         editor.putString("ID_USER",id);
-                        editor.commit();
+                        editor.putString("EMAIL", email);
+                        editor.putString("USER_NAME", tenDangNhap);
                         editor.putString("TOKEN", token);
                         editor.commit();
                         launchActivityMenu();
